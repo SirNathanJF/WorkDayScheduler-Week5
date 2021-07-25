@@ -13,3 +13,16 @@ for(let eventText = 9; eventText <= 17; eventText++){
     }
 };
 
+for (let hourIndex = 9; hourIndex <= 17; hourIndex++){
+    const presentTime = $("#hour${hourIndex}").data("time")
+
+    if(parseInt(presentDay.format("H")) > presentTime){
+        $("#hour${hourIndex}").addClass("past");
+
+    } else if(parseInt(presentDay.format("H")) == presentTime){
+        $("#hour${hourIndex}").addClass("present");
+
+    } else{
+        $("#hour${hourIndex}").addClass("future");
+    }
+};
